@@ -18,6 +18,11 @@ call conda activate base
 call conda env config vars set MAMBA_NO_BANNER=1
 call conda activate base
 
+:: Data science utilities - install at user level, available across envs
+:: Utils for project template creation and updating
+call pip install --user cookiecutter
+call pip install --user cruft
+
 :: Use mamba in place of conda
 call conda install mamba -n base -c conda-forge
 call mamba create -n minimal_ds
