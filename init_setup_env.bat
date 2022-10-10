@@ -52,7 +52,7 @@ call conda config --show channel_priority
 :: Install the basic required packages here
 :: These are expected in every Python data science stack
 call mamba install pandas scikit-learn matplotlib notebook seaborn
-call mamba jupyter jupyterlab
+call mamba install jupyter jupyterlab
 
 :: Additional Python packages
 :: Allow running jupyter notebook against kernels in other conda environments
