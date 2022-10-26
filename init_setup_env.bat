@@ -25,7 +25,7 @@ call pip install --user cruft
 
 :: Use mamba in place of conda
 call conda install mamba -n base -c conda-forge
-call mamba create -n minimal_ds
+call mamba create -n ds-base
 
 rem Checks whether the env has been created in the expected path
 set path_to_check=%USERPROFILE%\miniconda3\
@@ -37,11 +37,6 @@ if not exist %path_to_check% (
 
 rem Now proceeds to create the minimal data science environment
 cd %path_to_check%
-
-:: Disable mamba banner via env variable
-call conda activate minimal_ds
-call conda env config vars set MAMBA_NO_BANNER=1
-call conda activate minimal_ds
 
 :: Add and enforce the use of conda-forge as the preferred channel
 call conda config --env --add channels conda-forge
